@@ -33,10 +33,10 @@ public class CoffeeServiceTest extends AbstractServiceTest {
   void create() throws Exception {
     Coffee created = service.
         create(
-            new Coffee(null, CoffeeType.AMERICANO, LocalDateTime.of(2020, 01, 30, 10, 00, 00), 1));
+            new Coffee(null, CoffeeType.AMERICANO, LocalDateTime.of(2020, 1, 30, 10, 0, 0), 1));
     Integer id = created.id();
     Coffee newCoffee = new Coffee(null, CoffeeType.AMERICANO,
-        LocalDateTime.of(2020, 01, 30, 10, 00, 00), 1);
+        LocalDateTime.of(2020, 1, 30, 10, 0, 0), 1);
     newCoffee.setId(id);
     TEST_MATCHER1.assertMatch(created, newCoffee);
     TEST_MATCHER1.assertMatch(service.get(id), newCoffee);

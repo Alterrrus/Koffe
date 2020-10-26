@@ -48,8 +48,8 @@ public class CoffeeController {
   public Coffee getCoffee(@PathVariable int id) {
     return service.get(id);
   }
-/**
- * only for restfull crud*/
+/*
+  only for restfull crud*/
 
  /* @DeleteMapping("/coffee/{id}")
   @ResponseStatus(value = HttpStatus.NO_CONTENT)

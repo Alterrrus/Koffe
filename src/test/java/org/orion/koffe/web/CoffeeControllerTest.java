@@ -1,6 +1,5 @@
 package org.orion.koffe.web;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.orion.koffe.RestTestData.TEST_MATCHER;
 import static org.orion.koffe.RestTestData.TEST_MATCHER1;
 import static org.orion.koffe.RestTestData.coffe4;
@@ -19,7 +18,6 @@ import org.orion.koffe.model.Coffee;
 import org.orion.koffe.model.CoffeeType;
 import org.orion.koffe.service.CoffeeService;
 import org.orion.koffe.util.exception.ErrorType;
-import org.orion.koffe.util.exception.NotFoundException;
 import org.orion.koffe.web.json.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.MessageSourceAccessor;
@@ -99,7 +97,7 @@ class CoffeeControllerTest {
   @Test
   void makeCoffee() throws Exception {
     Coffee newCoffee = new Coffee(null, CoffeeType.AMERICANO, LocalDateTime
-        .of(2020, 03, 30, 10, 00, 00), 1);
+        .of(2020, 3, 30, 10, 0, 0), 1);
     ResultActions action = perform(MockMvcRequestBuilders.post("/")
         .contentType(MediaType.APPLICATION_JSON)
         .content(JsonUtil.writeValue(newCoffee)));
@@ -118,7 +116,7 @@ class CoffeeControllerTest {
         .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
         .andExpect(TEST_MATCHER1.contentJson(coffe4));
   }
-  /**only for restfull crud**
+  /*only for restfull crud**
 
    */
 
