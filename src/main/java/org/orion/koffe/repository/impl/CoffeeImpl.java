@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class CoffeeImpl implements CoffeeRepo {
 
+
   private final CoffeeJpa repo;
 
   public CoffeeImpl(CoffeeJpa repo) {
